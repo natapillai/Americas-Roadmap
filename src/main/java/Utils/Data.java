@@ -1,5 +1,6 @@
 package Utils;
 
+
 public class Data {
     private String ids;
     private double log;
