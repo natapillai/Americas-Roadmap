@@ -71,9 +71,7 @@ public class ReadingData {
 				matrix[i][j] = Utils.HaversineDistance.distance(da.get(i), da.get(j));
 
 		le = MinimumSpanningTree.findMST(matrix);
-
-		System.out.println(le);
-
+		
 		writeMST(le);
 	}
 }

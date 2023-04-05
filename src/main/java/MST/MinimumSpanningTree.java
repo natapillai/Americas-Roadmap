@@ -33,8 +33,7 @@ public class MinimumSpanningTree {
                 }
             }
         }
-
-return mst;
+    return mst;
     }
 
 }
