@@ -23,6 +23,18 @@ public class Edge implements Comparable<Edge> {
         return weight;
     }
 
+    public int either()
+    {
+        return from;
+    }
+
+    public int other(int v)
+    {
+        if(v == from) return from;
+        else if(v == to) return to;
+        else throw new RuntimeException("Inconsistent edge");
+    }
+
     @Override
     public int compareTo(Edge other) {
         return Double.compare(this.weight, other.weight);

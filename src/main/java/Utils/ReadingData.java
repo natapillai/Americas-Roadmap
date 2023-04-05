@@ -1,12 +1,8 @@
 package Utils;
-
 import Algorithms.Edge;
 import Algorithms.MinimumSpanningTree;
-
 import java.io.*;
 import java.util.*;
-
-
 public class ReadingData {
 	
 	public static List<Data> FetchFile(String filePath)
@@ -96,10 +92,8 @@ public class ReadingData {
 
 		writeMST(le);
 
-		odd_vertices = MinimumSpanningTree.fetchoddVertices(le);
+		odd_vertices = MinimumSpanningTree.fetchoddVertices(le); //get odd vertices
 
 		writeodd(odd_vertices);
-
-
 	}
 }
