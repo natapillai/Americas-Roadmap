@@ -32,11 +32,35 @@ public class ReadingData {
 		return values;
 	}
 
+	public static void writeMST(List<Edge> list_edge)
+	{
+		String filepath = "MST.csv";
+
+		try
+		{
+			BufferedWriter bw = new BufferedWriter(new FileWriter(filepath));
+
+			bw.write("Source" + "," + "Dest." + "," + "Weight");
+			bw.newLine();
+
+			for(Edge edge: list_edge)
+			{
+				bw.write(edge.getFrom() + "," + edge.getTo() + "," + edge.getWeight());
+				bw.newLine();
+			}
+
+			bw.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String filePath = "crimeSample.csv";
 		List<Data> da = FetchFile(filePath);
-		List<Edge> le = new ArrayList<>();
+		List<Edge> le;
 
 //		MinimumSpanningTree mst = new MinimumSpanningTree();
 
@@ -48,27 +72,8 @@ public class ReadingData {
 
 		le = MinimumSpanningTree.findMST(matrix);
 
-		for(Edge edge: le)
-		{
-			System.out.println(edge.getFrom() + " -> " + edge.getTo());
-			System.out.println(edge.getWeight());
-		}
-/*		List<Integer> oddDegreeVertices = new ArrayList<>();
+		System.out.println(le);
 
-		for(int i = 0; i< da.size(); i++)
-		{
-			int degree = 0;
-			for(Edge edge : le)
-			{
-				if(edge.getFrom() == i || edge.getTo() == i)
-				{
-					degree++;
-				}
-			}
-			if(degree % 2 != 0)
-
-		}*/
-
-
+		writeMST(le);
 	}
 }
