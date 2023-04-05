@@ -1,5 +1,8 @@
 package Utils;
 
+import MST.Edge;
+import MST.MinimumSpanningTree;
+
 import java.io.*;
 import java.util.*;
 
@@ -33,6 +36,9 @@ public class ReadingData {
 		// TODO Auto-generated method stub
 		String filePath = "crimeSample.csv";
 		List<Data> da = FetchFile(filePath);
+		List<Edge> le = new ArrayList<>();
+
+//		MinimumSpanningTree mst = new MinimumSpanningTree();
 
 		double matrix[][] = new double[da.size()][da.size()];
 
@@ -40,11 +46,29 @@ public class ReadingData {
 			for (int j = 0; j < da.size(); j++)
 				matrix[i][j] = Utils.HaversineDistance.distance(da.get(i), da.get(j));
 
-		for (int i = 0; i < da.size(); i++)
+		le = MinimumSpanningTree.findMST(matrix);
+
+		for(Edge edge: le)
 		{
-			for (int j = 0; j < da.size(); j++)
-				System.out.print(matrix[i][j]);
-			System.out.println();
+			System.out.println(edge.getFrom() + " -> " + edge.getTo());
+			System.out.println(edge.getWeight());
 		}
+/*		List<Integer> oddDegreeVertices = new ArrayList<>();
+
+		for(int i = 0; i< da.size(); i++)
+		{
+			int degree = 0;
+			for(Edge edge : le)
+			{
+				if(edge.getFrom() == i || edge.getTo() == i)
+				{
+					degree++;
+				}
+			}
+			if(degree % 2 != 0)
+
+		}*/
+
+
 	}
 }
