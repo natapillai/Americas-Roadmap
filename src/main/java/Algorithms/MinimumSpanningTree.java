@@ -1,8 +1,6 @@
-package MST;
+package Algorithms;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class MinimumSpanningTree {
     public static List<Edge> findMST(double[][] matrix)
@@ -34,6 +32,23 @@ public class MinimumSpanningTree {
             }
         }
     return mst;
+    }
+
+    public static Set<Integer> fetchoddVertices(List<Edge> mst)
+    {
+        Set<Integer> odd = new HashSet<>();
+        for(Edge edge: mst)
+        {
+            if(edge.getFrom() % 2 != 0)
+            {
+                odd.add(edge.getFrom());
+            }
+            if(edge.getTo() % 2 != 0)
+            {
+                odd.add(edge.getTo());
+            }
+        }
+        return odd;
     }
 
 }

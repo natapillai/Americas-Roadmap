@@ -1,4 +1,4 @@
-package MST;
+package Algorithms;
 
 public class Edge implements Comparable<Edge> {
     int from;

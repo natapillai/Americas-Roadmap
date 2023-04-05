@@ -1,7 +1,7 @@
 package Utils;
 
-import MST.Edge;
-import MST.MinimumSpanningTree;
+import Algorithms.Edge;
+import Algorithms.MinimumSpanningTree;
 
 import java.io.*;
 import java.util.*;
@@ -56,11 +56,35 @@ public class ReadingData {
 		}
 	}
 
+	public static void writeodd(Set<Integer> oddvertices)
+	{
+		//implement method to write Set values to CSV
+		String filepath = "oddvertices.csv";
+
+		try{
+			BufferedWriter bw = new BufferedWriter(new FileWriter(filepath));
+			bw.write("Vertex");
+			bw.newLine();
+
+			for(Integer vertex: oddvertices)
+			{
+				bw.write(vertex.toString() + ",");
+				bw.newLine();
+			}
+
+			bw.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String filePath = "crimeSample.csv";
 		List<Data> da = FetchFile(filePath);
 		List<Edge> le;
+		Set<Integer> odd_vertices;
 
 		double matrix[][] = new double[da.size()][da.size()];
 
@@ -68,8 +92,14 @@ public class ReadingData {
 			for (int j = 0; j < da.size(); j++)
 				matrix[i][j] = Utils.HaversineDistance.distance(da.get(i), da.get(j));
 
-		le = MinimumSpanningTree.findMST(matrix);
+		le = MinimumSpanningTree.findMST(matrix); //finding MST using Prim's algorithm
 
 		writeMST(le);
+
+		odd_vertices = MinimumSpanningTree.fetchoddVertices(le);
+
+		writeodd(odd_vertices);
+
+
 	}
 }
