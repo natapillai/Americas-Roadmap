@@ -62,8 +62,6 @@ public class ReadingData {
 		List<Data> da = FetchFile(filePath);
 		List<Edge> le;
 
-//		MinimumSpanningTree mst = new MinimumSpanningTree();
-
 		double matrix[][] = new double[da.size()][da.size()];
 
 		for (int i = 0; i < da.size(); i++)
@@ -71,7 +69,7 @@ public class ReadingData {
 				matrix[i][j] = Utils.HaversineDistance.distance(da.get(i), da.get(j));
 
 		le = MinimumSpanningTree.findMST(matrix);
-		
+
 		writeMST(le);
 	}
 }
