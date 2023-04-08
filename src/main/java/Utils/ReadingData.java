@@ -1,6 +1,9 @@
 package Utils;
 import Algorithms.Edge;
+import Algorithms.Graph;
+import Algorithms.Matching;
 import Algorithms.MinimumSpanningTree;
+import Algorithms.EulerianCircuit;
 import java.io.*;
 import java.util.*;
 public class ReadingData {
@@ -52,6 +55,16 @@ public class ReadingData {
 		}
 	}
 
+	public static List<Edge> createMinimumWeightPerfectMatching(Set<Integer> oddVertices, Graph graph) {
+		List<Edge> subgraph = new ArrayList<>();
+		for (Edge e : graph.edges()) {
+			if (oddVertices.contains(e.either()) && oddVertices.contains(e.other(e.either()))) {
+				subgraph.add(e);
+			}
+		}
+		return Matching.minimumWeightPerfectMatching(subgraph);
+	}
+
 	public static void writeodd(Set<Integer> oddvertices)
 	{
 		//implement method to write Set values to CSV
@@ -81,6 +94,8 @@ public class ReadingData {
 		List<Data> da = FetchFile(filePath);
 		List<Edge> le;
 		Set<Integer> odd_vertices;
+		List<Edge> matching;
+		List<Integer> euleriancircuit;
 
 		double matrix[][] = new double[da.size()][da.size()];
 
@@ -95,5 +110,18 @@ public class ReadingData {
 		odd_vertices = MinimumSpanningTree.fetchoddVertices(le); //get odd vertices
 
 		writeodd(odd_vertices);
+
+		Graph graph = new Graph(da.size(), le);
+
+		matching = createMinimumWeightPerfectMatching(odd_vertices, graph);
+
+		Set<Edge> set = new HashSet<>();
+		set.addAll(le);
+		set.addAll(matching);
+
+		Graph subgraph = new Graph(da.size(), set);
+
+		euleriancircuit = EulerianCircuit.computeEulerianCircuit(subgraph);
+
 	}
 }

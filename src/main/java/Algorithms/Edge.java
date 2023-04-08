@@ -11,6 +11,16 @@ public class Edge implements Comparable<Edge> {
         this.weight = weight;
     }
 
+    public int getId(int v, int w) {
+        if (v == from && w == to) {
+            return 0;
+        } else if (v == to && w == from) {
+            return 0;
+        } else {
+            throw new IllegalArgumentException("Invalid edge endpoints");
+        }
+    }
+
     public int getFrom() {
         return from;
     }
