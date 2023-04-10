@@ -1,9 +1,6 @@
 package MSTAlgorithms;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Hungarian {
     private final double[][] costMatrix;
@@ -230,5 +227,38 @@ public class Hungarian {
             }
         }
         return matching;
+    }
+
+    public List<Edge> matching2(List<Integer> oddVertices, int orderexecture[], double graph[][], List<Edge> mst)
+    {
+        double mstgraph[][]=new double[graph.length][graph.length];
+        List<Edge> values=new ArrayList<>();
+        for(Edge edge: mst)
+        {
+            mstgraph[edge.getEdge1()][edge.getEdge2()]=edge.getWeight();
+            mstgraph[edge.getEdge2()][edge.getEdge1()]=edge.getWeight();
+        }
+
+        PriorityQueue<Edge> pq=new PriorityQueue<>((a,b)->(int)(a.getWeight()*100-b.getWeight()*100));
+        int count=oddVertices.size();
+        for(int i=0;i<count;i++)
+        {
+            for(int j=i+1;j<count;j++)
+            {
+                if(mstgraph[oddVertices.get(i)][oddVertices.get(j)]==0)
+                {
+                    pq.add(new Edge(oddVertices.get(i),oddVertices.get(j),graph[oddVertices.get(i)][oddVertices.get(j)]));
+                }
+            }
+            if(pq.size()>0)
+            {
+                Edge edge=pq.poll();
+                mstgraph[edge.getEdge1()][edge.getEdge2()]=edge.getWeight();
+                mstgraph[edge.getEdge2()][edge.getEdge1()]=edge.getWeight();
+                values.add(edge);
+            }
+        }
+
+        return values;
     }
 }

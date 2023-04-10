@@ -38,6 +38,8 @@ public class ReadingData {
 
 		double graph[][] = new double[da.size()][da.size()];
 
+		System.out.println(da.size()+"  "+"size");
+
 		for (int i = 0; i < da.size(); i++)
 			for (int j = 0; j < da.size(); j++)
 				graph[i][j] = Utils.HaversineDistance.distance(da.get(i), da.get(j));
@@ -110,7 +112,10 @@ public class ReadingData {
 //		for(int i=0;i<orderexecture.length;i++)
 //			System.out.println(orderexecture[i]);
 
-		List<Edge> matching=hungarian.matching(oddVert,orderexecture,graph);
+//		List<Edge> matching=hungarian.matching(oddVert,orderexecture,graph);
+
+		List<Edge> matching=hungarian.matching2(oddVert,orderexecture,graph,li);
+//
 //		for(Edge e:matching)
 //			System.out.println(e.getEdge1()+"------>"+e.getEdge2());
 
@@ -123,7 +128,7 @@ public class ReadingData {
 
 //		List<Integer> oddVerti = ov.OddVertex(hungarianmatch, graph.length);
 //		for(int i:oddVerti)
-//			System.out.println(i);
+//			System.out.println(i+"  "+oddVerti.size());
 
 //		double g[][]=new double[graph.length][graph.length];
 //		for(Edge e: hungarianmatch)
@@ -143,10 +148,16 @@ public class ReadingData {
 
 		List<Integer> ecircuit= ec.EulerianCircuitAlgorithm();
 
-		for(int i:ecircuit)
+		HashMap<Integer,Integer> map=new HashMap<>();
+
+		for(int i:ecircuit){
 			System.out.println(i);
+			map.put(i,map.getOrDefault(i,0)+1);
+		}
 
 		System.out.println(ec.getCost());
+
+		System.out.println(map.size());
 
 	}
 }
