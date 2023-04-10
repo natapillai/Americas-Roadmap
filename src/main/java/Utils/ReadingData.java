@@ -148,16 +148,37 @@ public class ReadingData {
 
 		List<Integer> ecircuit= ec.EulerianCircuitAlgorithm();
 
-		HashMap<Integer,Integer> map=new HashMap<>();
+//		HashMap<Integer,Integer> map=new HashMap<>();
+//
+//		for(int i:ecircuit){
+//			System.out.println(i);
+//			map.put(i,map.getOrDefault(i,0)+1);
+//		}
 
-		for(int i:ecircuit){
-			System.out.println(i);
-			map.put(i,map.getOrDefault(i,0)+1);
+		List<Integer> hamiltonianCircuit = new ArrayList<>();
+		boolean[] visited = new boolean[graph.length];
+		int prev=0;
+		visited[0]=true;
+		double cost=0;
+		hamiltonianCircuit.add(prev);
+		for (int i = 1; i < ecircuit.size(); i++) {
+			int vertex = ecircuit.get(i);
+			if (!visited[vertex]) {
+				visited[vertex] = true;
+				cost+=graph[prev][vertex];
+				prev=vertex;
+				hamiltonianCircuit.add(vertex);
+			}
 		}
+		cost+=graph[prev][0];
+		hamiltonianCircuit.add(0);
 
-		System.out.println(ec.getCost());
+		for(int i:hamiltonianCircuit)
+			System.out.println(i);
 
-		System.out.println(map.size());
+		System.out.println(cost+"   cost");
+
+
 
 	}
 }
