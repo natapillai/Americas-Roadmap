@@ -12,7 +12,7 @@ public class Prims
 
         boolean visited[]=new boolean[V];
 
-        PriorityQueue<Edge> minedge = new PriorityQueue<>((edge1,edge2)-> (int) (edge1.getWeight()*100-edge2.getWeight()*100));
+        PriorityQueue<Edge> minedge = new PriorityQueue<>((edge1,edge2)-> (int) (edge1.getWeight()*1000-edge2.getWeight()*1000));
 
         List<Edge> mst=new ArrayList<>();
 

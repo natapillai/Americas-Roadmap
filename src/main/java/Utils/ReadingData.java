@@ -1,6 +1,8 @@
 package Utils;
 
 import MSTAlgorithms.*;
+import OptimizationAlgorithms.RandomSwap;
+import OptimizationAlgorithms.TwoOpt;
 
 import java.io.*;
 import java.util.*;
@@ -58,7 +60,7 @@ public class ReadingData {
 //				{ 5, 0, 10, 15 },
 //				{ 8, 10, 0, 20 },
 //				{ 0, 15, 20, 0 },};
-
+//
 //		double graph[][] = {{0, 10, 15, 20},
 //				{10, 0, 35, 25},
 //				{15, 35, 0, 30},
@@ -78,10 +80,10 @@ public class ReadingData {
 		Prims pr =new Prims();
 		List<Edge> li=pr.PrimsAlgorithms(graph);
 
-		int count=0;
-
-//		for(int i=0;i<li.size();i++)
-//			System.out.println(li.get(i).getEdge1()+"------->"+li.get(i).getEdge2()+"---------->"+li.get(i).getWeight()+"  "+count++);
+//		for(Edge e: li) {
+//			sum+=e.getWeight();
+//			System.out.println(e.getEdge1() + "  " + e.getEdge2() + "   =" + e.getWeight()+"  "+sum);
+//		}
 
 		OddVertices ov=new OddVertices();
 
@@ -159,24 +161,41 @@ public class ReadingData {
 		boolean[] visited = new boolean[graph.length];
 		int prev=0;
 		visited[0]=true;
-		double cost=0;
 		hamiltonianCircuit.add(prev);
 		for (int i = 1; i < ecircuit.size(); i++) {
 			int vertex = ecircuit.get(i);
 			if (!visited[vertex]) {
 				visited[vertex] = true;
-				cost+=graph[prev][vertex];
-				prev=vertex;
 				hamiltonianCircuit.add(vertex);
 			}
 		}
-		cost+=graph[prev][0];
 		hamiltonianCircuit.add(0);
 
-		for(int i:hamiltonianCircuit)
-			System.out.println(i);
+		CostTraversal costTraversal=new CostTraversal();
+		double cost = costTraversal.costTraversal(hamiltonianCircuit,graph.length,graph,0);
 
-		System.out.println(cost+"   cost");
+//		for(int i:hamiltonianCircuit)
+//			System.out.println(i);
+
+		System.out.println(cost+"......cost");
+
+
+		RandomSwap randomSwap=new RandomSwap();
+		List<Integer> newtours = randomSwap.RandomSwapOpt(hamiltonianCircuit,graph,1000000);
+
+		cost = costTraversal.costTraversal(newtours,graph.length,graph,0);
+
+		System.out.println(cost+"   New Node");
+
+//		for(int i:newtours)
+//			System.out.println("New tour  "+i+"   "+cost);
+
+		TwoOpt twoOpt=new TwoOpt();
+		List<Integer> tOpt = twoOpt.TwoOptAlgorithm(hamiltonianCircuit,graph);
+
+		cost=costTraversal.costTraversal(tOpt,graph.length,graph,tOpt.get(0));
+
+		System.out.println(cost+"  Two New Node");
 
 
 
