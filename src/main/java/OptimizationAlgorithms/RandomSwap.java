@@ -13,7 +13,7 @@ public class RandomSwap {
     public List<Integer> RandomSwapOpt(List<Integer> a, double graph[][], int numberSwaps)
     {
 
-        int min=1,max= graph.length-1;
+        int min=graph.length/2,max= graph.length-1;
 
         CostTraversal costTraversal=new CostTraversal();
         double costBefore=costTraversal.costTraversal(a,graph.length,graph,0);

@@ -18,7 +18,7 @@ public class HaversineDistance {
                 * Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
         double c = 2 * Math.atan2(Math.sqrt(hav), Math.sqrt(1 - hav));
         double dist = EARTH_RADIUS * c;
-        return dist;
+        return dist*1000;
     }
 
 }

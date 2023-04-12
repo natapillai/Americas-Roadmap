@@ -22,6 +22,7 @@ public class TwoOpt {
 
                     double costBefore = graph[tour[i]][tour[j]] + graph[tour[k]][tour[l]];
                     double costAfter = graph[tour[i]][tour[k]] + graph[tour[j]][tour[l]];
+
                     if (costAfter < costBefore) {
 
                         int vertexj=tour[j];

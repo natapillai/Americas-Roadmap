@@ -2,6 +2,7 @@ package Utils;
 
 import MSTAlgorithms.*;
 import OptimizationAlgorithms.RandomSwap;
+import OptimizationAlgorithms.SimulatedAnnealing;
 import OptimizationAlgorithms.TwoOpt;
 
 import java.io.*;
@@ -194,9 +195,13 @@ public class ReadingData {
 		List<Integer> tOpt = twoOpt.TwoOptAlgorithm(hamiltonianCircuit,graph);
 
 		cost=costTraversal.costTraversal(tOpt,graph.length,graph,tOpt.get(0));
-
 		System.out.println(cost+"  Two New Node");
 
+		SimulatedAnnealing simulatedAnnealing=new SimulatedAnnealing();
+		List<Integer> simulatedTour = simulatedAnnealing.simulatedAnnealing(hamiltonianCircuit,graph);
+
+		cost=costTraversal.costTraversal(simulatedTour,graph.length,graph,simulatedTour.get(0));
+		System.out.println(cost+"  simulated");
 
 
 	}

@@ -219,7 +219,7 @@ public class Hungarian {
     public List<Edge> matching(List<Integer> oddVertices, int orderexecture[], double graph[][])
     {
         List<Edge> matching=new ArrayList<>();
-        for (int i = 0; i < oddVertices.size(); i+=2) {
+        for (int i = 0; i < oddVertices.size()-1; i++) {
             if (orderexecture[i] != -1) {
                 int u = oddVertices.get(i);
                 int v = oddVertices.get(i+1);
@@ -239,7 +239,7 @@ public class Hungarian {
             mstgraph[edge.getEdge2()][edge.getEdge1()]=edge.getWeight();
         }
 
-        PriorityQueue<Edge> pq=new PriorityQueue<>((a,b)->(int)(a.getWeight()*100-b.getWeight()*100));
+        PriorityQueue<Edge> pq=new PriorityQueue<>((a,b)->(int)(a.getWeight()-b.getWeight()));
         int count=oddVertices.size();
         for(int i=0;i<count;i++)
         {
