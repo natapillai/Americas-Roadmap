@@ -198,7 +198,7 @@ public class ReadingData {
 		System.out.println(cost+"  Two New Node");
 
 		SimulatedAnnealing simulatedAnnealing=new SimulatedAnnealing();
-		List<Integer> simulatedTour = simulatedAnnealing.simulatedAnnealing(hamiltonianCircuit,graph);
+		List<Integer> simulatedTour = simulatedAnnealing.simulatedAnnealing(hamiltonianCircuit,graph,1);
 
 		cost=costTraversal.costTraversal(simulatedTour,graph.length,graph,simulatedTour.get(0));
 		System.out.println(cost+"  simulated");

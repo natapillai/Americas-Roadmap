@@ -2,13 +2,15 @@ package OptimizationAlgorithms;
 
 import Utils.CostTraversal;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class SimulatedAnnealing {
 
-    public List<Integer> simulatedAnnealing(List<Integer> tour, double graph[][])
+    public List<Integer> simulatedAnnealing(List<Integer> tour, double graph[][],int iterations)
     {
         List<Integer> currentSolution = new ArrayList<>(tour);
 
@@ -18,11 +20,11 @@ public class SimulatedAnnealing {
         ArrayList<Integer> bestSolution = new ArrayList<>(currentSolution);
         double bestTourLength = currentTourLength;
 
-        for(int y=0;y<10;y++){
+        for(int y=0;y<iterations;y++){
 
             int numEdges= graph.length;
             double temperature = 999999999;
-            double coolingRate=0.99999;
+            double coolingRate=0.999999995;
 
             while (temperature > 0.1)
             {
