@@ -9,8 +9,20 @@ public class TSP_GUI extends JFrame implements ActionListener {
     private final static int fWIDTH = 1200;
     private final static int fHEIGHT = 700;
 
-    private JButton button;
-    private JButton dbutton;
+    //Christofides Algorithm
+    private JButton cPath;
+
+    //Random Swapping Optimization
+    private JButton rPath;
+
+    //2-Opt Optimization
+    private JButton tPath;
+
+    //Simulated Annealing Optimization
+    private JButton sPath;
+
+    //Ant Colony Optimization
+    private JButton aPath;
 
     private MapPanel mapPanel;
 
@@ -27,22 +39,33 @@ public class TSP_GUI extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
-        button = new JButton("Path");
+        cPath = new JButton("Christofides Algorithm");
+        cPath.setBounds(750,30, 170, 40);
+        cPath.addActionListener(this);
 
-        button.setBounds(700,300, 100, 50);
+        rPath = new JButton("Random Swapping");
+        rPath.setBounds(750,80, 170, 40);
+        rPath.addActionListener(this);
 
-        button.addActionListener(this);
+        tPath = new JButton("2-Opt");
+        tPath.setBounds(750,130, 170, 40);
+        tPath.addActionListener(this);
 
-        dbutton = new JButton("dPath");
+        sPath = new JButton("Simulated Annealing");
+        sPath.setBounds(750,180, 170, 40);
+        sPath.addActionListener(this);
 
-        dbutton.setBounds(700,500, 100, 50);
-
-        dbutton.addActionListener(this);
+        aPath = new JButton("Ant Colony");
+        aPath.setBounds(750,230, 170, 40);
+        aPath.addActionListener(this);
 
         mapPanel = new MapPanel();
 
-        add(button);
-        add(dbutton);
+        add(cPath);
+        add(rPath);
+        add(tPath);
+        add(sPath);
+        add(aPath);
         add(mapPanel);
 
     }
@@ -180,10 +203,22 @@ public class TSP_GUI extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if(e.getSource() == button){
+        if(e.getSource() == cPath){
             mapPanel.drawPath();
         }
-        if(e.getSource() == dbutton){
+        if(e.getSource() == rPath){
+            mapPanel.drawPath1();
+        }
+
+        if(e.getSource() == tPath){
+            mapPanel.drawPath1();
+        }
+
+        if(e.getSource() == sPath){
+            mapPanel.drawPath1();
+        }
+
+        if(e.getSource() == aPath){
             mapPanel.drawPath1();
         }
 

@@ -108,6 +108,8 @@ public class MapPanel extends JPanel {
             Ellipse2D.Double vertexShape = new Ellipse2D.Double(vx,vy,vW,vH);
             graph2D.fill(vertexShape);
             graph2D.draw(vertexShape);
+
+            graph2D.drawString(" ("+(int) v.getX()+","+(int) v.getY()+")",(int) v.getX()+vW,(int) v.getY()+vH);
         }
 
     }
