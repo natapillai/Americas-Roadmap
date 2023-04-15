@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="084b73ad-055c-4636-bc6d-3f22694990e8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MapPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TSP_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TSP_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Vertex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MSTAlgorithms/Hungarian.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MSTAlgorithms/Hungarian.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MSTAlgorithms/Prims.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MSTAlgorithms/Prims.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Utils/HaversineDistance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utils/HaversineDistance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Utils/ReadingData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utils/ReadingData.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
