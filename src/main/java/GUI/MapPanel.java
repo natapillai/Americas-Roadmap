@@ -11,35 +11,39 @@ import java.util.Random;
 
 public class MapPanel extends JPanel {
 
-    //Panel dimensions
-    private final static int pWIDTH = 1100;
-    private final static int pHEIGHT = 750;
-
     //Co-ordinate point dimensions
     private final static int vH = 5;
     private final static int vW = 5;
 
     //ArrayList to store the object of type Vertex class
     private static List<Vertex> vList = new ArrayList();
-    private static List<Integer> iList = new ArrayList();
+    private static List<Integer> christo = new ArrayList();
+    private static List<Integer> randomSwap=new ArrayList<>();
+    private static List<Integer> twoOpt=new ArrayList<>();
+    private static List<Integer> simulatedAnneling=new ArrayList<>();
 
     //MapPanel constructor which is run at when this class is called
     //Used to create the panel in which the Vertex and Edges are shown
-    public MapPanel(){
+    public MapPanel(List<Vertex> vertexList,List<Integer> christos ,List<Integer> randomSwaps, List<Integer> twoOpts,List<Integer> simulatedAnnelings){
 
-        setBounds(0,0, pWIDTH, pHEIGHT);
+        Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int)(size.getWidth()*0.85);
+        int height = (int)(size.getHeight());
+
+//        setBounds(0,0, pWIDTH, pHEIGHT);
+        setBounds(0,0, width, height);
+
         setBackground(Color.WHITE);
 
 
         Random random = new Random();
 
-        for (int i = 0; i<5; i++){
-            double rn1 = random.nextDouble(10, pHEIGHT -10);
-            double rn2 = random.nextDouble(10, pHEIGHT -10);
-//            System.out.println(rn1 + " i " + i);
-
-            vList.add(new Vertex(rn1,rn2,""));
-
+        for (int i = 0; i<vertexList.size(); i++){
+            vList.add(vertexList.get(i));
+            christo.add(christos.get(i));
+            randomSwap.add(randomSwaps.get(i));
+            twoOpt.add(twoOpts.get(i));
+            simulatedAnneling.add(simulatedAnnelings.get(i));
 
         }
 
@@ -152,14 +156,14 @@ public class MapPanel extends JPanel {
         graph2D.setColor(Color.BLUE);
 
         //Draw the edges onto the panel which shows the path of Chritofides Algorithm
-        for(Integer i:iList){
+        for(int i=0;i<christo.size();i++){
 
-            if(vList.get(i+1)!=null){
-                Line2D.Double edge = new Line2D.Double(vList.get(i).getX()+vW/2,vList.get(i).getY()+vH/2,vList.get(i+1).getX()+vW/2,vList.get(i+1).getY()+vH/2);
+            if(christo.get(i+1)!=null){
+                Line2D.Double edge = new Line2D.Double(vList.get(christo.get(i)).getX()+vW/2,vList.get(christo.get(i)).getY()+vH/2,vList.get(christo.get(i+1)).getX()+vW/2,vList.get(christo.get(i+1)).getY()+vH/2);
                 graph2D.draw(edge);
             }
 
-            Line2D.Double edge = new Line2D.Double(vList.get(vList.size()-1).getX()+vW/2,vList.get(vList.size()-1).getY()+vH/2,vList.get(0).getX()+vW/2,vList.get(0).getY()+vH/2);
+            Line2D.Double edge = new Line2D.Double(vList.get(christo.get(christo.size()-1)).getX()+vW/2,vList.get(christo.get(christo.size()-1)).getY()+vH/2,vList.get(christo.get(0)).getX()+vW/2,vList.get(christo.get(0)).getY()+vH/2);
             graph2D.draw(edge);
 
         }
@@ -192,17 +196,17 @@ public class MapPanel extends JPanel {
         //Setting the width of the edges
         graph2D.setStroke(new BasicStroke(1));
         //Setting the color of the edges
-        graph2D.setColor(Color.BLUE);
+        graph2D.setColor(Color.GREEN);
 
         //Draw the edges onto the panel which shows the path of Random Swaping Algorithm
-        for(Integer i:iList){
+        for(int i=0;i<randomSwap.size();i++){
 
-            if(vList.get(i+1)!=null){
-                Line2D.Double edge = new Line2D.Double(vList.get(i).getX()+vW/2,vList.get(i).getY()+vH/2,vList.get(i+1).getX()+vW/2,vList.get(i+1).getY()+vH/2);
+            if(randomSwap.get(i+1)!=null){
+                Line2D.Double edge = new Line2D.Double(vList.get(randomSwap.get(i)).getX()+vW/2,vList.get(randomSwap.get(i)).getY()+vH/2,vList.get(randomSwap.get(i+1)).getX()+vW/2,vList.get(randomSwap.get(i+1)).getY()+vH/2);
                 graph2D.draw(edge);
             }
 
-            Line2D.Double edge = new Line2D.Double(vList.get(vList.size()-1).getX()+vW/2,vList.get(vList.size()-1).getY()+vH/2,vList.get(0).getX()+vW/2,vList.get(0).getY()+vH/2);
+            Line2D.Double edge = new Line2D.Double(vList.get(randomSwap.get(randomSwap.size()-1)).getX()+vW/2,vList.get(randomSwap.get(randomSwap.size()-1)).getY()+vH/2,vList.get(randomSwap.get(0)).getX()+vW/2,vList.get(randomSwap.get(0)).getY()+vH/2);
             graph2D.draw(edge);
 
         }
@@ -235,17 +239,17 @@ public class MapPanel extends JPanel {
         //Setting the width of the edges
         graph2D.setStroke(new BasicStroke(1));
         //Setting the color of the edges
-        graph2D.setColor(Color.BLUE);
+        graph2D.setColor(Color.red);
 
         //Draw the edges onto the panel which shows the path of 2-Opt Algorithm
-        for(Integer i:iList){
+        for(int i=0;i<twoOpt.size();i++){
 
-            if(vList.get(i+1)!=null){
-                Line2D.Double edge = new Line2D.Double(vList.get(i).getX()+vW/2,vList.get(i).getY()+vH/2,vList.get(i+1).getX()+vW/2,vList.get(i+1).getY()+vH/2);
+            if(twoOpt.get(i+1)!=null){
+                Line2D.Double edge = new Line2D.Double(vList.get(twoOpt.get(i)).getX()+vW/2,vList.get(twoOpt.get(i)).getY()+vH/2,vList.get(twoOpt.get(i+1)).getX()+vW/2,vList.get(twoOpt.get(i+1)).getY()+vH/2);
                 graph2D.draw(edge);
             }
 
-            Line2D.Double edge = new Line2D.Double(vList.get(vList.size()-1).getX()+vW/2,vList.get(vList.size()-1).getY()+vH/2,vList.get(0).getX()+vW/2,vList.get(0).getY()+vH/2);
+            Line2D.Double edge = new Line2D.Double(vList.get(twoOpt.get(twoOpt.size()-1)).getX()+vW/2,vList.get(twoOpt.get(twoOpt.size()-1)).getY()+vH/2,vList.get(twoOpt.get(0)).getX()+vW/2,vList.get(twoOpt.get(0)).getY()+vH/2);
             graph2D.draw(edge);
 
         }
@@ -278,17 +282,17 @@ public class MapPanel extends JPanel {
         //Setting the width of the edges
         graph2D.setStroke(new BasicStroke(1));
         //Setting the color of the edges
-        graph2D.setColor(Color.BLUE);
+        graph2D.setColor(Color.YELLOW);
 
         //Draw the edges onto the panel which shows the path of Simulated Annealing Algorithm
-        for(Integer i:iList){
+        for(int i=0;i<simulatedAnneling.size();i++){
 
-            if(vList.get(i+1)!=null){
-                Line2D.Double edge = new Line2D.Double(vList.get(i).getX()+vW/2,vList.get(i).getY()+vH/2,vList.get(i+1).getX()+vW/2,vList.get(i+1).getY()+vH/2);
+            if(simulatedAnneling.get(i+1)!=null){
+                Line2D.Double edge = new Line2D.Double(vList.get(simulatedAnneling.get(i)).getX()+vW/2,vList.get(simulatedAnneling.get(i)).getY()+vH/2,vList.get(simulatedAnneling.get(i+1)).getX()+vW/2,vList.get(simulatedAnneling.get(i+1)).getY()+vH/2);
                 graph2D.draw(edge);
             }
 
-            Line2D.Double edge = new Line2D.Double(vList.get(vList.size()-1).getX()+vW/2,vList.get(vList.size()-1).getY()+vH/2,vList.get(0).getX()+vW/2,vList.get(0).getY()+vH/2);
+            Line2D.Double edge = new Line2D.Double(vList.get(simulatedAnneling.get(simulatedAnneling.size()-1)).getX()+vW/2,vList.get(simulatedAnneling.get(simulatedAnneling.size()-1)).getY()+vH/2,vList.get(simulatedAnneling.get(0)).getX()+vW/2,vList.get(simulatedAnneling.get(0)).getY()+vH/2);
             graph2D.draw(edge);
 
         }
@@ -321,17 +325,17 @@ public class MapPanel extends JPanel {
         //Setting the width of the edges
         graph2D.setStroke(new BasicStroke(1));
         //Setting the color of the edges
-        graph2D.setColor(Color.BLUE);
+        graph2D.setColor(Color.CYAN);
 
         //Draw the edges onto the panel which shows the path of Ant Colony Algorithm
-        for(Integer i:iList){
+        for(int i=0;i<christo.size();i++){
 
-            if(vList.get(i+1)!=null){
-                Line2D.Double edge = new Line2D.Double(vList.get(i).getX()+vW/2,vList.get(i).getY()+vH/2,vList.get(i+1).getX()+vW/2,vList.get(i+1).getY()+vH/2);
+            if(christo.get(i+1)!=null){
+                Line2D.Double edge = new Line2D.Double(vList.get(christo.get(i)).getX()+vW/2,vList.get(christo.get(i)).getY()+vH/2,vList.get(christo.get(i+1)).getX()+vW/2,vList.get(christo.get(i+1)).getY()+vH/2);
                 graph2D.draw(edge);
             }
 
-            Line2D.Double edge = new Line2D.Double(vList.get(vList.size()-1).getX()+vW/2,vList.get(vList.size()-1).getY()+vH/2,vList.get(0).getX()+vW/2,vList.get(0).getY()+vH/2);
+            Line2D.Double edge = new Line2D.Double(vList.get(christo.get(christo.size()-1)).getX()+vW/2,vList.get(christo.get(christo.size()-1)).getY()+vH/2,vList.get(christo.get(0)).getX()+vW/2,vList.get(christo.get(0)).getY()+vH/2);
             graph2D.draw(edge);
 
         }

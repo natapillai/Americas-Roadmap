@@ -1,5 +1,7 @@
 package Utils;
 
+import GUI.TSP_GUI;
+import GUI.Vertex;
 import MSTAlgorithms.*;
 import OptimizationAlgorithms.RandomSwap;
 import OptimizationAlgorithms.SimulatedAnnealing;
@@ -202,6 +204,38 @@ public class ReadingData {
 
 		cost=costTraversal.costTraversal(simulatedTour,graph.length,graph,simulatedTour.get(0));
 		System.out.println(cost+"  simulated");
+
+
+		List<Double> xAxis=new ArrayList<>();
+		List<Double> yAxis=new ArrayList<>();
+
+		Random random = new Random();
+		double rn1=0.0;
+
+		for (int i = 0; i<tOpt.size()-1; i++) {
+			rn1 = random.nextDouble(10, 1190);
+			if(!xAxis.contains(rn1))
+				xAxis.add(rn1);
+		}
+
+		for (int i = 0; i<tOpt.size()-1; i++) {
+			rn1 = random.nextDouble(10, 890);
+			if(!yAxis.contains(rn1))
+				yAxis.add(rn1);
+		}
+
+		List<Vertex> vertexLists=new ArrayList<>();
+		for(int i=0;i<tOpt.size()-1;i++){
+			vertexLists.add(new Vertex(xAxis.get(i),yAxis.get(i),da.get(tOpt.get(i)).getIds()));
+		}
+		vertexLists.add(new Vertex(xAxis.get(0),yAxis.get(0),da.get(tOpt.get(0)).getIds()));
+
+//		System.out.println(vertexLists.size()+"........."+tOpt.size());
+
+		TSP_GUI tsp_gui=new TSP_GUI(vertexLists,hamiltonianCircuit,newtours,tOpt,simulatedTour);
+
+
+
 
 
 	}

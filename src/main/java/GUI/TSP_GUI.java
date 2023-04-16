@@ -1,8 +1,10 @@
 package GUI;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class TSP_GUI extends JFrame implements ActionListener {
 
@@ -40,46 +42,50 @@ public class TSP_GUI extends JFrame implements ActionListener {
 
     }
 
-    public TSP_GUI() {
+    public TSP_GUI(List<Vertex> vertexList,List<Integer> christo ,List<Integer> randomSwap, List<Integer> twoOpt,List<Integer> simulatedAnneling) {
 //        this.button = button;
 
+        Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int)(size.getWidth());
+        int height = (int)(size.getHeight());
+
         setLayout(null);
-        setSize(fWIDTH, fHEIGHT);
+        setSize(width, height);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
         cPath = new JButton("Christofides Algorithm");
-        cPath.setBounds(1105,10, 170, 40);
+        cPath.setBounds(width-200,10, 170, 40);
         cPath.addActionListener(this);
 
         rPath = new JButton("Random Swapping");
-        rPath.setBounds(1105,60, 170, 40);
+        rPath.setBounds(width-200,60, 170, 40);
         rPath.addActionListener(this);
 
         tPath = new JButton("2-Opt");
-        tPath.setBounds(1105,110, 170, 40);
+        tPath.setBounds(width-200,110, 170, 40);
         tPath.addActionListener(this);
 
         sPath = new JButton("Simulated Annealing");
-        sPath.setBounds(1105,160, 170, 40);
+        sPath.setBounds(width-200,160, 170, 40);
         sPath.addActionListener(this);
 
         aPath = new JButton("Ant Colony");
-        aPath.setBounds(1105,210, 170, 40);
+        aPath.setBounds(width-200,210, 170, 40);
         aPath.addActionListener(this);
 
         resetPath = new JButton("Reset");
-        resetPath.setBounds(1105,260, 170, 40);
+        resetPath.setBounds(width-200,260, 170, 40);
         resetPath.addActionListener(this);
 
         cLabel = new JLabel("Cost: ");
-        cLabel.setBounds(1105,310,170,20);
+        cLabel.setBounds(width-200,310,170,20);
 
         cText = new JTextField("Click on an algorithm");
         cText.setEditable(false);
-        cText.setBounds(1105,330,170,40);
+        cText.setBounds(width-200,330,170,40);
 
-        mapPanel = new MapPanel();
+        mapPanel = new MapPanel(vertexList,christo,randomSwap,twoOpt,simulatedAnneling);
 
         add(cPath);
         add(rPath);
@@ -91,10 +97,6 @@ public class TSP_GUI extends JFrame implements ActionListener {
         add(cText);
         add(mapPanel);
 
-    }
-
-    public static void main(String[] args) {
-        new TSP_GUI();
     }
 
     @Override
