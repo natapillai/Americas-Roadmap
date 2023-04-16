@@ -156,7 +156,7 @@ public class MapPanel extends JPanel {
         graph2D.setColor(Color.BLUE);
 
         //Draw the edges onto the panel which shows the path of Chritofides Algorithm
-        for(int i=0;i<christo.size();i++){
+        for(int i=0;i<christo.size()-1;i++){
 
             if(christo.get(i+1)!=null){
                 Line2D.Double edge = new Line2D.Double(vList.get(christo.get(i)).getX()+vW/2,vList.get(christo.get(i)).getY()+vH/2,vList.get(christo.get(i+1)).getX()+vW/2,vList.get(christo.get(i+1)).getY()+vH/2);
@@ -199,7 +199,7 @@ public class MapPanel extends JPanel {
         graph2D.setColor(Color.GREEN);
 
         //Draw the edges onto the panel which shows the path of Random Swaping Algorithm
-        for(int i=0;i<randomSwap.size();i++){
+        for(int i=0;i<randomSwap.size()-1;i++){
 
             if(randomSwap.get(i+1)!=null){
                 Line2D.Double edge = new Line2D.Double(vList.get(randomSwap.get(i)).getX()+vW/2,vList.get(randomSwap.get(i)).getY()+vH/2,vList.get(randomSwap.get(i+1)).getX()+vW/2,vList.get(randomSwap.get(i+1)).getY()+vH/2);
@@ -242,7 +242,7 @@ public class MapPanel extends JPanel {
         graph2D.setColor(Color.red);
 
         //Draw the edges onto the panel which shows the path of 2-Opt Algorithm
-        for(int i=0;i<twoOpt.size();i++){
+        for(int i=0;i<twoOpt.size()-1;i++){
 
             if(twoOpt.get(i+1)!=null){
                 Line2D.Double edge = new Line2D.Double(vList.get(twoOpt.get(i)).getX()+vW/2,vList.get(twoOpt.get(i)).getY()+vH/2,vList.get(twoOpt.get(i+1)).getX()+vW/2,vList.get(twoOpt.get(i+1)).getY()+vH/2);
@@ -285,7 +285,7 @@ public class MapPanel extends JPanel {
         graph2D.setColor(Color.YELLOW);
 
         //Draw the edges onto the panel which shows the path of Simulated Annealing Algorithm
-        for(int i=0;i<simulatedAnneling.size();i++){
+        for(int i=0;i<simulatedAnneling.size()-1;i++){
 
             if(simulatedAnneling.get(i+1)!=null){
                 Line2D.Double edge = new Line2D.Double(vList.get(simulatedAnneling.get(i)).getX()+vW/2,vList.get(simulatedAnneling.get(i)).getY()+vH/2,vList.get(simulatedAnneling.get(i+1)).getX()+vW/2,vList.get(simulatedAnneling.get(i+1)).getY()+vH/2);
@@ -328,7 +328,7 @@ public class MapPanel extends JPanel {
         graph2D.setColor(Color.CYAN);
 
         //Draw the edges onto the panel which shows the path of Ant Colony Algorithm
-        for(int i=0;i<christo.size();i++){
+        for(int i=0;i<christo.size()-1;i++){
 
             if(christo.get(i+1)!=null){
                 Line2D.Double edge = new Line2D.Double(vList.get(christo.get(i)).getX()+vW/2,vList.get(christo.get(i)).getY()+vH/2,vList.get(christo.get(i+1)).getX()+vW/2,vList.get(christo.get(i+1)).getY()+vH/2);

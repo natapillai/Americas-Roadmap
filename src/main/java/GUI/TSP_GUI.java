@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TSP_GUI extends JFrame implements ActionListener {
@@ -37,12 +38,14 @@ public class TSP_GUI extends JFrame implements ActionListener {
 
     private MapPanel mapPanel;
 
+    private static List<Double> costAlgo=new ArrayList<>();
+
     public void gui_frame(){
 
 
     }
 
-    public TSP_GUI(List<Vertex> vertexList,List<Integer> christo ,List<Integer> randomSwap, List<Integer> twoOpt,List<Integer> simulatedAnneling) {
+    public TSP_GUI(List<Vertex> vertexList,List<Integer> christo ,List<Integer> randomSwap, List<Integer> twoOpt,List<Integer> simulatedAnneling,List<Double> cost) {
 //        this.button = button;
 
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
@@ -53,6 +56,9 @@ public class TSP_GUI extends JFrame implements ActionListener {
         setSize(width, height);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
+
+        for(Double i:cost)
+            costAlgo.add(i);
 
         cPath = new JButton("Christofides Algorithm");
         cPath.setBounds(width-200,10, 170, 40);
@@ -104,26 +110,26 @@ public class TSP_GUI extends JFrame implements ActionListener {
 
         if(e.getSource() == cPath){
             mapPanel.christofidesPath();
-            cText.setText("christofidesPath");
+            cText.setText(String.valueOf(costAlgo.get(0)));
         }
         if(e.getSource() == rPath){
             mapPanel.randomswapingPath();
-            cText.setText("randomswapingPath");
+            cText.setText(String.valueOf(costAlgo.get(1)));
         }
 
         if(e.getSource() == tPath){
             mapPanel.twooptPath();
-            cText.setText("twooptPath");
+            cText.setText(String.valueOf(costAlgo.get(2)));
         }
 
         if(e.getSource() == sPath){
             mapPanel.simulatedannealingPath();
-            cText.setText("simulatedannealingPath");
+            cText.setText(String.valueOf(costAlgo.get(2)));
         }
 
         if(e.getSource() == aPath){
             mapPanel.antcolonyPath();
-            cText.setText("antcolonyPath");
+            cText.setText(String.valueOf(costAlgo.get(2)));
         }
         if(e.getSource() == resetPath){
             mapPanel.allPlots();

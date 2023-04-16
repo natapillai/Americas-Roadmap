@@ -68,24 +68,31 @@ public class ExecutorMain
             }
         }
         hamiltonianCircuit.add(0);
+        List<Double> costAlgo=new ArrayList<>();
 
         double cost=0.0;
         CostTraversal costTraversal=new CostTraversal();
+        cost=costTraversal.costTraversal(hamiltonianCircuit,graph.length,graph,hamiltonianCircuit.get(0));
+        costAlgo.add(cost);
 
         //RandomSwaping
         RandomSwap randomSwap=new RandomSwap();
         List<Integer> newtours = randomSwap.RandomSwapOpt(hamiltonianCircuit,graph,1000000);
+        cost=costTraversal.costTraversal(newtours,graph.length,graph,newtours.get(0));
+        costAlgo.add(cost);
 
         //Two Opt
         TwoOpt twoOpt=new TwoOpt();
         List<Integer> tOpt = twoOpt.TwoOptAlgorithm(hamiltonianCircuit,graph);
+        cost=costTraversal.costTraversal(tOpt,graph.length,graph,tOpt.get(0));
+        costAlgo.add(cost);
 
         //Simulated Annealing
         SimulatedAnnealing simulatedAnnealing=new SimulatedAnnealing();
         List<Integer> simulatedTour = simulatedAnnealing.simulatedAnnealing(tOpt,graph,1);
-
         cost=costTraversal.costTraversal(simulatedTour,graph.length,graph,simulatedTour.get(0));
-        System.out.println(cost);
+        costAlgo.add(cost);
+
 
         //Ant Colony
 
@@ -121,7 +128,7 @@ public class ExecutorMain
 
         vertexLists.add(new Vertex(xAxis.get(0),yAxis.get(0),da.get(tOpt.get(0)).getIds()));
 
-        TSP_GUI tsp_gui=new TSP_GUI(vertexLists,hamiltonianCircuit,newtours,tOpt,simulatedTour);
+        TSP_GUI tsp_gui=new TSP_GUI(vertexLists,hamiltonianCircuit,newtours,tOpt,simulatedTour,costAlgo);
 
     }
 }

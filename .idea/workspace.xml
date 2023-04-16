@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="084b73ad-055c-4636-bc6d-3f22694990e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ExecutorMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MapPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ExecutorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExecutorMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TSP_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TSP_GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/SimulatedAnnealing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/SimulatedAnnealing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utils/ReadingData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/ReadingData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Utils/ReadingData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utils/ReadingData.class" afterDir="false" />
     </list>
@@ -59,7 +57,14 @@
       <recent name="Gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ReadingData">
+  <component name="RunManager" selected="Application.ExecutorMain">
+    <configuration name="ExecutorMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ExecutorMain" />
+      <module name="Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ReadingData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Utils.ReadingData" />
       <module name="Project" />
@@ -101,6 +106,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ExecutorMain" />
         <item itemvalue="Application.ReadingData" />
         <item itemvalue="Application.TSP_GUI" />
       </list>

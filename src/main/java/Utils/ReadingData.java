@@ -172,11 +172,12 @@ public class ReadingData {
 				hamiltonianCircuit.add(vertex);
 			}
 		}
+		List<Double> costAlgo=new ArrayList<>();
 		hamiltonianCircuit.add(0);
 
 		CostTraversal costTraversal=new CostTraversal();
 		double cost = costTraversal.costTraversal(hamiltonianCircuit,graph.length,graph,0);
-
+		costAlgo.add(cost);
 //		for(int i:hamiltonianCircuit)
 //			System.out.println(i);
 
@@ -187,6 +188,7 @@ public class ReadingData {
 		List<Integer> newtours = randomSwap.RandomSwapOpt(hamiltonianCircuit,graph,1000000);
 
 		cost = costTraversal.costTraversal(newtours,graph.length,graph,0);
+		costAlgo.add(cost);
 
 		System.out.println(cost+"   New Node");
 
@@ -197,12 +199,14 @@ public class ReadingData {
 		List<Integer> tOpt = twoOpt.TwoOptAlgorithm(hamiltonianCircuit,graph);
 
 		cost=costTraversal.costTraversal(tOpt,graph.length,graph,tOpt.get(0));
+		costAlgo.add(cost);
 		System.out.println(cost+"  Two New Node");
 
 		SimulatedAnnealing simulatedAnnealing=new SimulatedAnnealing();
 		List<Integer> simulatedTour = simulatedAnnealing.simulatedAnnealing(hamiltonianCircuit,graph,1);
 
 		cost=costTraversal.costTraversal(simulatedTour,graph.length,graph,simulatedTour.get(0));
+		costAlgo.add(cost);
 		System.out.println(cost+"  simulated");
 
 
@@ -232,7 +236,7 @@ public class ReadingData {
 
 //		System.out.println(vertexLists.size()+"........."+tOpt.size());
 
-		TSP_GUI tsp_gui=new TSP_GUI(vertexLists,hamiltonianCircuit,newtours,tOpt,simulatedTour);
+		TSP_GUI tsp_gui=new TSP_GUI(vertexLists,hamiltonianCircuit,newtours,tOpt,simulatedTour,costAlgo);
 
 
 
