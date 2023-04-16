@@ -49,7 +49,7 @@ public class TSP_GUI extends JFrame implements ActionListener {
 //        this.button = button;
 
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = (int)(size.getWidth());
+        int width = (int)(size.getWidth()*0.86);
         int height = (int)(size.getHeight());
 
         setLayout(null);
@@ -61,35 +61,35 @@ public class TSP_GUI extends JFrame implements ActionListener {
             costAlgo.add(i);
 
         cPath = new JButton("Christofides Algorithm");
-        cPath.setBounds(width-200,10, 170, 40);
+        cPath.setBounds(width,10, 170, 40);
         cPath.addActionListener(this);
 
         rPath = new JButton("Random Swapping");
-        rPath.setBounds(width-200,60, 170, 40);
+        rPath.setBounds(width,60, 170, 40);
         rPath.addActionListener(this);
 
         tPath = new JButton("2-Opt");
-        tPath.setBounds(width-200,110, 170, 40);
+        tPath.setBounds(width,110, 170, 40);
         tPath.addActionListener(this);
 
         sPath = new JButton("Simulated Annealing");
-        sPath.setBounds(width-200,160, 170, 40);
+        sPath.setBounds(width,160, 170, 40);
         sPath.addActionListener(this);
 
         aPath = new JButton("Ant Colony");
-        aPath.setBounds(width-200,210, 170, 40);
+        aPath.setBounds(width,210, 170, 40);
         aPath.addActionListener(this);
 
         resetPath = new JButton("Reset");
-        resetPath.setBounds(width-200,260, 170, 40);
+        resetPath.setBounds(width,260, 170, 40);
         resetPath.addActionListener(this);
 
         cLabel = new JLabel("Cost: ");
-        cLabel.setBounds(width-200,310,170,20);
+        cLabel.setBounds(width,310,170,20);
 
         cText = new JTextField("Click on an algorithm");
         cText.setEditable(false);
-        cText.setBounds(width-200,330,170,40);
+        cText.setBounds(width,330,170,40);
 
         mapPanel = new MapPanel(vertexList,christo,randomSwap,twoOpt,simulatedAnneling);
 
