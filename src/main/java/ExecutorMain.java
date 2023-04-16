@@ -21,7 +21,7 @@ public class ExecutorMain
     public static void main(String args[])
     {
         //Read the file from the path
-        String filePath = "crimeSample.csv";
+        String filePath = "info6205.spring2023.teamproject.csv";
         List<Data> da = FetchFile(filePath);
 
         //Creating the graph

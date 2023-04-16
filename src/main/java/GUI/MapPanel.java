@@ -7,7 +7,6 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class MapPanel extends JPanel {
 
@@ -29,6 +28,8 @@ public class MapPanel extends JPanel {
     private static List<Integer> twoOpt=new ArrayList<>();
     //List to store the object of type Integer to store path for Simulated Annealing Algorithm
     private static List<Integer> simulatedAnneling=new ArrayList<>();
+    //List to store the object of type Integer to store path for Ant Colony Algorithm
+    private static List<Integer> antColony =new ArrayList<>();
 
     //MapPanel constructor which is run at when this class is called
     //Used to create the panel in which the Vertex and Edges are shown
@@ -50,6 +51,7 @@ public class MapPanel extends JPanel {
             randomSwap.add(randomSwaps.get(i));
             twoOpt.add(twoOpts.get(i));
             simulatedAnneling.add(simulatedAnnelings.get(i));
+            antColony.add(simulatedAnnelings.get(i));
         }
 
     }
@@ -103,8 +105,10 @@ public class MapPanel extends JPanel {
             graph2D.fill(vertexShape);
             graph2D.draw(vertexShape);
 
-            //Displays the details of each vertices
-            graph2D.drawString(" ("+(int) v.getX()+","+(int) v.getY()+")",(int) v.getX()+vW,(int) v.getY()+vH);
+//            //Displays the details of each vertices
+//            graph2D.drawString(" ("+(int) v.getX()+","+(int) v.getY()+")",(int) v.getX()+vW,(int) v.getY()+vH);
+            //Displays the ID of each vertex
+            graph2D.drawString(v.getId(),(int) v.getX()+vW,(int) v.getY()+vH);
         }
 
     }
@@ -146,8 +150,10 @@ public class MapPanel extends JPanel {
             graph2D.fill(vertexShape);
             graph2D.draw(vertexShape);
 
-            //Displays the details of each vertices
-            graph2D.drawString(" ("+(int) v.getX()+","+(int) v.getY()+")",(int) v.getX()+vW,(int) v.getY()+vH);
+//            //Displays the details of each vertices
+//            graph2D.drawString(" ("+(int) v.getX()+","+(int) v.getY()+")",(int) v.getX()+vW,(int) v.getY()+vH);
+            //Displays the ID of each vertex
+            graph2D.drawString(v.getId(),(int) v.getX()+vW,(int) v.getY()+vH);
         }
 
     }
