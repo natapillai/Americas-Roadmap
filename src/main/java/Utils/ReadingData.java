@@ -3,6 +3,7 @@ package Utils;
 import GUI.TSP_GUI;
 import GUI.Vertex;
 import MSTAlgorithms.*;
+import OptimizationAlgorithms.AntColonyOptimization;
 import OptimizationAlgorithms.RandomSwap;
 import OptimizationAlgorithms.SimulatedAnnealing;
 import OptimizationAlgorithms.TwoOpt;

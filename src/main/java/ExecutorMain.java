@@ -1,9 +1,11 @@
 import GUI.TSP_GUI;
 import GUI.Vertex;
 import MSTAlgorithms.*;
+import OptimizationAlgorithms.AntColonyOptimization;
 import OptimizationAlgorithms.RandomSwap;
 import OptimizationAlgorithms.SimulatedAnnealing;
 import OptimizationAlgorithms.TwoOpt;
+import Utils.AntColonyData;
 import Utils.CostTraversal;
 import Utils.Data;
 
@@ -95,7 +97,14 @@ public class ExecutorMain
 
 
         //Ant Colony
-
+        AntColonyData acd = new AntColonyData(graph);
+        acd.initialize_pheromone();
+        AntColonyOptimization aco = new AntColonyOptimization(acd.getPheromone(), acd.getNumAnts(), acd.getNumIterations(),
+                acd.getAlpha(), acd.getBeta(), acd.getEvaporation(), acd.getQ(), graph, da.size());
+        aco.solve();
+        List<Integer> antcolony = aco.getBestTour();
+        cost = costTraversal.costTraversal(antcolony, graph.length, graph, antcolony.get(0));
+        costAlgo.add(cost);
 
 
 
