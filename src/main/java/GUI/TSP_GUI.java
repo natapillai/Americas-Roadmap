@@ -124,12 +124,12 @@ public class TSP_GUI extends JFrame implements ActionListener {
 
         if(e.getSource() == sPath){
             mapPanel.simulatedannealingPath();
-            cText.setText(String.valueOf(costAlgo.get(2)));
+            cText.setText(String.valueOf(costAlgo.get(3)));
         }
 
         if(e.getSource() == aPath){
             mapPanel.antcolonyPath();
-            cText.setText(String.valueOf(costAlgo.get(2)));
+            cText.setText(String.valueOf(costAlgo.get(3)));
         }
         if(e.getSource() == resetPath){
             mapPanel.allPlots();
