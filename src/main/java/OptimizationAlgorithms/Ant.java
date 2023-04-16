@@ -85,6 +85,11 @@ public class Ant {
             currentCity = startCity;
         }
     }
+
+    public void setTourLength(double tourLength) {
+        this.tourLength = tourLength;
+    }
+
     public double getTourLength() {
         return tourLength;
     }

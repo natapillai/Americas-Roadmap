@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="084b73ad-055c-4636-bc6d-3f22694990e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/Ant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/AntColonyData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test/AntColonyTest/AntColonyDataTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test/AntColonyTest/AntColonyOptimizationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test/AntColonyTest/AntTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ExecutorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExecutorMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/AntColony.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/AntColonyOptimization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/ReadingData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/ReadingData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ExecutorMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ExecutorMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OptimizationAlgorithms/AntColony.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Utils/ReadingData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utils/ReadingData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/Ant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OptimizationAlgorithms/Ant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OptimizationAlgorithms/Ant.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +60,7 @@
       <recent name="Gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ExecutorMain">
+  <component name="RunManager" selected="JUnit.AntTest">
     <configuration name="ExecutorMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ExecutorMain" />
       <module name="Project" />
@@ -85,15 +81,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TSP_GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUI.TSP_GUI" />
+    <configuration name="AntColonyDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="GUI.*" />
+          <option name="PATTERN" value="AntColonyTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="AntColonyTest.AntColonyDataTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AntColonyOptimizationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AntColonyTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="AntColonyTest" />
+      <option name="MAIN_CLASS_NAME" value="AntColonyTest.AntColonyOptimizationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AntTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AntColonyTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="AntColonyTest" />
+      <option name="MAIN_CLASS_NAME" value="AntColonyTest.AntTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -113,9 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AntTest" />
+        <item itemvalue="JUnit.AntColonyOptimizationTest" />
+        <item itemvalue="JUnit.AntColonyDataTest" />
         <item itemvalue="Application.ExecutorMain" />
         <item itemvalue="Application.ReadingData" />
-        <item itemvalue="Application.TSP_GUI" />
       </list>
     </recent_temporary>
   </component>
@@ -148,6 +178,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/ExecutorMain.java</url>
           <line>99</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/target/classes/GUI/MapPanel.class</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/target/test/AntColonyTest/AntTest.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
