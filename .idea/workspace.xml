@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="084b73ad-055c-4636-bc6d-3f22694990e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/target/test/AntColonyTest/AntColonyDataTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test/AntColonyTest/AntColonyOptimizationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test/AntColonyTest/AntTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OptimizationAlgorithms/Ant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OptimizationAlgorithms/Ant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MapPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TSP_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TSP_GUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,13 +173,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ExecutorMain.java</url>
-          <line>99</line>
+          <line>108</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/target/classes/GUI/MapPanel.class</url>
-          <line>56</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/target/test/AntColonyTest/AntTest.java</url>

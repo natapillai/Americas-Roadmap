@@ -11,40 +11,45 @@ import java.util.Random;
 
 public class MapPanel extends JPanel {
 
+    //Instantiating integer object to store width and height of the panel
+    private int pWIDTH;
+    private int pHEIGHT;
+
     //Co-ordinate point dimensions
     private final static int vH = 5;
     private final static int vW = 5;
 
-    //ArrayList to store the object of type Vertex class
+    //List to store the object of type Vertex class
     private static List<Vertex> vList = new ArrayList();
+    //List to store the object of type Integer to store path for Christofides Algorithm
     private static List<Integer> christo = new ArrayList();
+    //List to store the object of type Integer to store path for Random Swap Algorithm
     private static List<Integer> randomSwap=new ArrayList<>();
+    //List to store the object of type Integer to store path for 2-Opt Algorithm
     private static List<Integer> twoOpt=new ArrayList<>();
+    //List to store the object of type Integer to store path for Simulated Annealing Algorithm
     private static List<Integer> simulatedAnneling=new ArrayList<>();
 
     //MapPanel constructor which is run at when this class is called
     //Used to create the panel in which the Vertex and Edges are shown
     public MapPanel(List<Vertex> vertexList,List<Integer> christos ,List<Integer> randomSwaps, List<Integer> twoOpts,List<Integer> simulatedAnnelings){
 
+        //Used to calculate the size of the screen and then display all the buttons and panel in a dynamic layout
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = (int)(size.getWidth()*0.85);
-        int height = (int)(size.getHeight());
+        pWIDTH = (int)(size.getWidth()*0.85);
+        pHEIGHT = (int)(size.getHeight());
 
-//        setBounds(0,0, pWIDTH, pHEIGHT);
-        setBounds(0,0, width, height);
-
+        //Setting all the parameters for the panel
+        setBounds(0,0, pWIDTH, pHEIGHT);
         setBackground(Color.WHITE);
 
-
-        Random random = new Random();
-
+        //Using for loop to store all the vertex values and path connections in their respective lists
         for (int i = 0; i<vertexList.size(); i++){
             vList.add(vertexList.get(i));
             christo.add(christos.get(i));
             randomSwap.add(randomSwaps.get(i));
             twoOpt.add(twoOpts.get(i));
             simulatedAnneling.add(simulatedAnnelings.get(i));
-
         }
 
     }
@@ -69,6 +74,7 @@ public class MapPanel extends JPanel {
 
         //Setting the width of the edges
         graph2D.setStroke(new BasicStroke(1));
+
         //Setting the color of the edges
         graph2D.setColor(Color.LIGHT_GRAY);
 
@@ -111,6 +117,7 @@ public class MapPanel extends JPanel {
 
         //Setting the width of the edges
         graph2D.setStroke(new BasicStroke(1));
+
         //Setting the color of the edges
         graph2D.setColor(Color.LIGHT_GRAY);
 
@@ -145,6 +152,7 @@ public class MapPanel extends JPanel {
 
     }
 
+    //This method is used to display the path using Christofides Algorithm
     public void christofidesPath(){
 
         //initialising the Graphics2D class to use to draw the different vertices and edges
@@ -152,6 +160,7 @@ public class MapPanel extends JPanel {
 
         //Setting the width of the edges
         graph2D.setStroke(new BasicStroke(1));
+
         //Setting the color of the edges
         graph2D.setColor(Color.BLUE);
 
@@ -188,6 +197,7 @@ public class MapPanel extends JPanel {
 
     }
 
+    //This method is used to display the path using Random Swapping Algorithm
     public void randomswapingPath(){
 
         //initialising the Graphics2D class to use to draw the different vertices and edges
@@ -195,6 +205,7 @@ public class MapPanel extends JPanel {
 
         //Setting the width of the edges
         graph2D.setStroke(new BasicStroke(1));
+
         //Setting the color of the edges
         graph2D.setColor(Color.GREEN);
 
@@ -231,6 +242,7 @@ public class MapPanel extends JPanel {
 
     }
 
+    //This method is used to display the path using 2-Opt Algorithm
     public void twooptPath(){
 
         //initialising the Graphics2D class to use to draw the different vertices and edges
@@ -238,6 +250,7 @@ public class MapPanel extends JPanel {
 
         //Setting the width of the edges
         graph2D.setStroke(new BasicStroke(1));
+
         //Setting the color of the edges
         graph2D.setColor(Color.red);
 
@@ -274,6 +287,7 @@ public class MapPanel extends JPanel {
 
     }
 
+    //This method is used to display the path using Simulated Annealing Algorithm
     public void simulatedannealingPath(){
 
         //initialising the Graphics2D class to use to draw the different vertices and edges
@@ -281,6 +295,7 @@ public class MapPanel extends JPanel {
 
         //Setting the width of the edges
         graph2D.setStroke(new BasicStroke(1));
+
         //Setting the color of the edges
         graph2D.setColor(Color.YELLOW);
 
@@ -317,6 +332,7 @@ public class MapPanel extends JPanel {
 
     }
 
+    //This method is used to display the path using Ant Colony Algorithm
     public void antcolonyPath(){
 
         //initialising the Graphics2D class to use to draw the different vertices and edges
@@ -324,6 +340,7 @@ public class MapPanel extends JPanel {
 
         //Setting the width of the edges
         graph2D.setStroke(new BasicStroke(1));
+
         //Setting the color of the edges
         graph2D.setColor(Color.CYAN);
 
