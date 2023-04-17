@@ -3,7 +3,7 @@ package Utils;
 public class AntColonyData {
     private double[][] pheromone;
     private int numAnts;
-    private final int numIterations = 750;
+    private final int numIterations = 100;
     private final double alpha = 1;
     private final double beta  = 5;
     private final double evaporation = 0.5;
