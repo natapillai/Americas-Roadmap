@@ -137,7 +137,7 @@ public class ExecutorMain
 
         vertexLists.add(new Vertex(xAxis.get(0),yAxis.get(0),da.get(tOpt.get(0)).getIds()));
 
-        TSP_GUI tsp_gui=new TSP_GUI(vertexLists,hamiltonianCircuit,newtours,tOpt,simulatedTour,costAlgo);
+        TSP_GUI tsp_gui=new TSP_GUI(vertexLists,hamiltonianCircuit,newtours,tOpt,simulatedTour,antcolony,costAlgo);
 
     }
 }

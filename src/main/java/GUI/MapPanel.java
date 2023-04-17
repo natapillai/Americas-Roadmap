@@ -33,7 +33,7 @@ public class MapPanel extends JPanel {
 
     //MapPanel constructor which is run at when this class is called
     //Used to create the panel in which the Vertex and Edges are shown
-    public MapPanel(List<Vertex> vertexList,List<Integer> christos ,List<Integer> randomSwaps, List<Integer> twoOpts,List<Integer> simulatedAnnelings){
+    public MapPanel(List<Vertex> vertexList,List<Integer> christos ,List<Integer> randomSwaps, List<Integer> twoOpts,List<Integer> simulatedAnnelings,List<Integer> antColonys){
 
         //Used to calculate the size of the screen and then display all the buttons and panel in a dynamic layout
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
@@ -51,7 +51,7 @@ public class MapPanel extends JPanel {
             randomSwap.add(randomSwaps.get(i));
             twoOpt.add(twoOpts.get(i));
             simulatedAnneling.add(simulatedAnnelings.get(i));
-            antColony.add(simulatedAnnelings.get(i));
+            antColony.add(antColonys.get(i));
         }
 
     }
@@ -351,14 +351,14 @@ public class MapPanel extends JPanel {
         graph2D.setColor(Color.CYAN);
 
         //Draw the edges onto the panel which shows the path of Ant Colony Algorithm
-        for(int i=0;i<christo.size()-1;i++){
+        for(int i=0;i<antColony.size()-1;i++){
 
-            if(christo.get(i+1)!=null){
-                Line2D.Double edge = new Line2D.Double(vList.get(christo.get(i)).getX()+vW/2,vList.get(christo.get(i)).getY()+vH/2,vList.get(christo.get(i+1)).getX()+vW/2,vList.get(christo.get(i+1)).getY()+vH/2);
+            if(antColony.get(i+1)!=null){
+                Line2D.Double edge = new Line2D.Double(vList.get(antColony.get(i)).getX()+vW/2,vList.get(antColony.get(i)).getY()+vH/2,vList.get(antColony.get(i+1)).getX()+vW/2,vList.get(christo.get(i+1)).getY()+vH/2);
                 graph2D.draw(edge);
             }
 
-            Line2D.Double edge = new Line2D.Double(vList.get(christo.get(christo.size()-1)).getX()+vW/2,vList.get(christo.get(christo.size()-1)).getY()+vH/2,vList.get(christo.get(0)).getX()+vW/2,vList.get(christo.get(0)).getY()+vH/2);
+            Line2D.Double edge = new Line2D.Double(vList.get(antColony.get(antColony.size()-1)).getX()+vW/2,vList.get(antColony.get(antColony.size()-1)).getY()+vH/2,vList.get(antColony.get(0)).getX()+vW/2,vList.get(antColony.get(0)).getY()+vH/2);
             graph2D.draw(edge);
 
         }

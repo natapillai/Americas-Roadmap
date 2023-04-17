@@ -44,7 +44,7 @@ public class TSP_GUI extends JFrame implements ActionListener {
     //Initializing a list to store the cost for each algorithm
     private static List<Double> costAlgo=new ArrayList<>();
 
-    public TSP_GUI(List<Vertex> vertexList,List<Integer> christo ,List<Integer> randomSwap, List<Integer> twoOpt,List<Integer> simulatedAnneling,List<Double> cost) {
+    public TSP_GUI(List<Vertex> vertexList,List<Integer> christo ,List<Integer> randomSwap, List<Integer> twoOpt,List<Integer> simulatedAnneling,List<Integer> antcolony,List<Double> cost) {
 
         //Used to calculate the size of the screen and then display all the buttons and panel in a dynamic layout
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
@@ -58,8 +58,9 @@ public class TSP_GUI extends JFrame implements ActionListener {
         setVisible(true);
 
         //Puts all the cost of the different algorithms into a list to display when the respective button is pressed
-        for(Double i:cost)
+        for(Double i:cost) {
             costAlgo.add(i);
+        }
 
         //Initializing the button for Christofides Algorithm, setting its parameters and add an action listener to this button
         cPath = new JButton("Christofides Algorithm");
@@ -101,7 +102,7 @@ public class TSP_GUI extends JFrame implements ActionListener {
         cText.setBounds(fWIDTH,330,170,40);
 
         //Initialising MapPanel class with inputs for each algorithm result
-        mapPanel = new MapPanel(vertexList,christo,randomSwap,twoOpt,simulatedAnneling);
+        mapPanel = new MapPanel(vertexList,christo,randomSwap,twoOpt,simulatedAnneling,antcolony);
 
         //Adding all the buttons, label, text field and JPanel to the frame
         add(cPath);
@@ -142,7 +143,7 @@ public class TSP_GUI extends JFrame implements ActionListener {
         //Condition to run the method antcolonyPath() to display the path on the graph when aPath button is clicked
         if(e.getSource() == aPath){
             mapPanel.antcolonyPath();
-            cText.setText(String.valueOf(costAlgo.get(3)));
+            cText.setText(String.valueOf(costAlgo.get(4)));
         }
         //Condition to run the method allPlots() to display all edges and vertices on the graph when resetPath button is clicked
         if(e.getSource() == resetPath){
