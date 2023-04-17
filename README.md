@@ -45,15 +45,28 @@ vertices with an even degree
 5. Finding an Eulerian circuit (traversing each edge of the graph exactly once)
 6. Transforming it into a Hamiltonian circuit (traversing each vertex of the graph exactly
 once by skipping previously visited vertices)
+
+
+
 This algorithm guarantees that the solution will be at most 1.5 times the optimal solution, with a time complexity of O(N2 log(N)) for a graph with N vertices.
+
+
 Random Swapping:
 This method of tactical optimization involves randomly switching the order of two cities (vertices) in the solution to see whether it improves it. It is a straightforward strategy that has the potential to enhance the solution but also runs the risk of becoming caught in local optima since the algorithm only explores the neighboring solution by swapping two cities.
+
+
 2-Opt:
 This tactical optimization method involves removing two edges from the solution and reconnecting them in a different way, checking if it results in a better solution. It can be more effective in improving the solution, but is more computationally expensive than random swapping.
+
+
 Simulated Annealing:
 The metaheuristic algorithm for strategic optimization is based on the annealing process in metallurgy. It starts with a high temperature and gradually cools down the system, allowing for more exploration at the beginning and more exploitation at the end. It can be useful in finding local optima, but careful parameter adjustment is necessary.
+
+
 Ant Colony:
 This strategic optimization method is based on the swarm intelligence of ants, who use pheromone trails to locate the shortest route between their nest and a food source. By laying virtual pheromone trails on the graph, the algorithm employs a similar method to determine the shortest path. It can be effective in finding good solutions quickly but require careful tuning of its parameters and can get stuck in local optima.
+
+
 Invariants:
 The graph must be undirected and connected
 The minimum spanning tree must be connected
