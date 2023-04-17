@@ -139,5 +139,9 @@ public class ExecutorMain
 
         TSP_GUI tsp_gui=new TSP_GUI(vertexLists,hamiltonianCircuit,newtours,tOpt,simulatedTour,antcolony,costAlgo);
 
+        for(int i=0;i<tOpt.size();i++)
+            System.out.println(da.get(tOpt.get(i)).getIds());
+        System.out.println(costAlgo.get(2));
+
     }
 }

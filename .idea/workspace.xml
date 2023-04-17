@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="084b73ad-055c-4636-bc6d-3f22694990e8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ExecutorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExecutorMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/SimulatedAnnealing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/SimulatedAnnealing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utils/AntColonyData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/AntColonyData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ExecutorMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ExecutorMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TSP_GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TSP_GUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
