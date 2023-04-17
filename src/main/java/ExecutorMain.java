@@ -82,18 +82,30 @@ public class ExecutorMain
         List<Integer> newtours = randomSwap.RandomSwapOpt(hamiltonianCircuit,graph,1000000);
         cost=costTraversal.costTraversal(newtours,graph.length,graph,newtours.get(0));
         costAlgo.add(cost);
+        for(int i=0;i<newtours.size();i++)
+            System.out.println(da.get(newtours.get(i)).getIds());
+        System.out.println("Random Swaping ....."+costAlgo.get(1));
 
         //Two Opt
         TwoOpt twoOpt=new TwoOpt();
         List<Integer> tOpt = twoOpt.TwoOptAlgorithm(hamiltonianCircuit,graph);
         cost=costTraversal.costTraversal(tOpt,graph.length,graph,tOpt.get(0));
         costAlgo.add(cost);
+        for(int i=0;i<tOpt.size();i++)
+            System.out.println(da.get(tOpt.get(i)).getIds());
+        System.out.println("2 Opt ....."+costAlgo.get(2));
+        System.out.println("Working on Simulated Annealing, This takes time.......");
+
 
         //Simulated Annealing
         SimulatedAnnealing simulatedAnnealing=new SimulatedAnnealing();
         List<Integer> simulatedTour = simulatedAnnealing.simulatedAnnealing(tOpt,graph,1);
         cost=costTraversal.costTraversal(simulatedTour,graph.length,graph,simulatedTour.get(0));
         costAlgo.add(cost);
+        for(int i=0;i<simulatedTour.size();i++)
+            System.out.println(da.get(simulatedTour.get(i)).getIds());
+        System.out.println("Simulated Annealing ....."+costAlgo.get(3));
+        System.out.println("Working on Ant Colony, this takes time.......");
 
 
         //Ant Colony
@@ -105,6 +117,9 @@ public class ExecutorMain
         List<Integer> antcolony = aco.getBestTour();
         cost = costTraversal.costTraversal(antcolony, graph.length, graph, antcolony.get(0));
         costAlgo.add(cost);
+        for(int i=0;i<antcolony.size();i++)
+            System.out.println(da.get(antcolony.get(i)).getIds());
+        System.out.println("Ant Colony ....."+costAlgo.get(4));
 
 
 
@@ -139,9 +154,6 @@ public class ExecutorMain
 
         TSP_GUI tsp_gui=new TSP_GUI(vertexLists,hamiltonianCircuit,newtours,tOpt,simulatedTour,antcolony,costAlgo);
 
-        for(int i=0;i<tOpt.size();i++)
-            System.out.println(da.get(tOpt.get(i)).getIds());
-        System.out.println(costAlgo.get(2));
 
     }
 }

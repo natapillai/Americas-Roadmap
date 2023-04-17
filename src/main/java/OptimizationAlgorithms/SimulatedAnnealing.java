@@ -24,7 +24,7 @@ public class SimulatedAnnealing {
 
             int numEdges= graph.length;
             double temperature = 999999999;
-            double coolingRate=0.9999999;
+            double coolingRate=0.999999;
 
             while (temperature > 0.1)
             {

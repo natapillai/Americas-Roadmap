@@ -7,10 +7,7 @@
     <list default="true" id="084b73ad-055c-4636-bc6d-3f22694990e8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ExecutorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExecutorMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/SimulatedAnnealing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OptimizationAlgorithms/SimulatedAnnealing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/AntColonyData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/AntColonyData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ExecutorMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ExecutorMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TSP_GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TSP_GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OptimizationAlgorithms/SimulatedAnnealing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OptimizationAlgorithms/SimulatedAnnealing.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +63,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadingData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Utils.ReadingData" />
+    <configuration name="AntColonyDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project" />
       <extension name="coverage">
         <pattern>
@@ -75,50 +71,53 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AntColonyDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="AntColonyTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="AntColonyTest.AntColonyDataTest" />
+      <option name="PACKAGE_NAME" value="Utils" />
+      <option name="MAIN_CLASS_NAME" value="Utils.AntColonyDataTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AntColonyOptimizationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CostTraversalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="AntColonyTest.*" />
+          <option name="PATTERN" value="Utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="AntColonyTest" />
-      <option name="MAIN_CLASS_NAME" value="AntColonyTest.AntColonyOptimizationTest" />
+      <option name="PACKAGE_NAME" value="Utils" />
+      <option name="MAIN_CLASS_NAME" value="Utils.CostTraversalTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AntTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HaversineDistanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="AntColonyTest.*" />
+          <option name="PATTERN" value="Utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="AntColonyTest" />
-      <option name="MAIN_CLASS_NAME" value="AntColonyTest.AntTest" />
+      <option name="PACKAGE_NAME" value="Utils" />
+      <option name="MAIN_CLASS_NAME" value="Utils.HaversineDistanceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TwoOptTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="OptimizationAlgorithmsTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="OptimizationAlgorithmsTest" />
+      <option name="MAIN_CLASS_NAME" value="OptimizationAlgorithmsTest.TwoOptTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -140,10 +139,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ExecutorMain" />
-        <item itemvalue="JUnit.AntTest" />
-        <item itemvalue="JUnit.AntColonyOptimizationTest" />
+        <item itemvalue="JUnit.HaversineDistanceTest" />
+        <item itemvalue="JUnit.CostTraversalTest" />
         <item itemvalue="JUnit.AntColonyDataTest" />
-        <item itemvalue="Application.ReadingData" />
+        <item itemvalue="JUnit.TwoOptTest" />
       </list>
     </recent_temporary>
   </component>
